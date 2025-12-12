@@ -92,8 +92,19 @@ section.keyboard > button {
   border-radius: 0.2rem;
 }
 
+section.keyboard > button.correct {
+  background-color: #10a95b;
+}
+
+section.keyboard > button.wrong {
+  background-color: #ec5d49;
+}
+
 .new-game {
-  padding: 0.5rem 1.5rem;
+  padding: 0 2rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  color: #262626;
   background-color: #11b5e5;
   border: 0.1rem solid #d7d7d7;
   border-radius: 0.2rem;
