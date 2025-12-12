@@ -1,35 +1,54 @@
 import { useState } from "react";
-import viteLogo from "/vite.svg";
-import reactLogo from "./assets/react.svg";
+import { languages } from "./languages";
 import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0);
+export function AssemblyEndgame() {
+  const [currentWord, setCurrentWord] = useState("react");
+
+  const languageElements = languages.map((lang) => {
+    const styles = {
+      backgroundColor: lang.backgroundColor,
+      color: lang.color,
+    };
+    return (
+      <span className="chip" style={styles} key={lang.name}>
+        {lang.name}
+      </span>
+    );
+  });
+
+  const letterElements = currentWord.split("").map((letter, index) => (
+    // biome-ignore lint/suspicious/noArrayIndexKey: Using index is safe because the characters are static and the list will never reorder or update independently.
+    <span key={index}>{letter.toUpperCase()}</span>
+  ));
+
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+  const keyboardElements = alphabet.split("").map((letter) => (
+    <button type="button" key={letter}>
+      {letter.toUpperCase()}
+    </button>
+  ));
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noopener">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noopener">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <main>
+      <header>
+        <h1>Assembly: Endgame</h1>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          Guess the word within 8 attempts to keep the programming world safe
+          from Assembly!
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      </header>
+      <section className="game-status">
+        <h2>You win!</h2>
+        <p>Well done! 🎉</p>
+      </section>
+      <section className="language-chips">{languageElements}</section>
+      <section className="word">{letterElements}</section>
+      <section className="keyboard">{keyboardElements}</section>
+      <button type="button" className="new-game">
+        New Game
+      </button>
+    </main>
   );
 }
-
-export default App;
