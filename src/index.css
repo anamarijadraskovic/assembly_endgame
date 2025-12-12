@@ -87,7 +87,8 @@ h6 {
   font-family: "Hanken Grotesk";
   font-style: normal;
   font-weight: 400;
-  src: url("public/fonts/hanken-grotesk-v12-latin-regular.woff2") format("woff2");
+  src: url("public/fonts/hanken-grotesk-v12-latin-regular.woff2")
+    format("woff2");
 }
 
 @font-face {
@@ -108,7 +109,10 @@ h6 {
 
 body,
 button {
-  font-family: Hanken Grotesk, Arial, sans-serif;
+  font-family:
+    Hanken Grotesk,
+    Arial,
+    sans-serif;
 }
 
 button {

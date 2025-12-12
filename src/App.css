@@ -2,8 +2,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  padding: 1.2rem;
+  min-height: 100vh;
+  padding: 2rem 1.2rem;
   color: #d9d9d9;
   text-align: center;
   background-color: #262626;
@@ -11,8 +11,8 @@ body {
 
 header > h1 {
   margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: #f9f4da;
 }
 
@@ -27,7 +27,7 @@ main {
   gap: 2rem;
   align-items: center;
   justify-content: center;
-  width: 25rem;
+  width: 25.5rem;
   max-width: 90vw;
 }
 
@@ -52,7 +52,9 @@ section.language-chips {
 }
 
 span.chip {
-  padding: 0.2rem 0.3rem;
+  padding: 0 0.7rem;
+  font-weight: 700;
+  line-height: 2.1rem;
   border-radius: 0.2rem;
 }
 
@@ -69,8 +71,9 @@ section.word > span {
   width: 2.5rem;
   height: 2.5rem;
   font-size: 1.125rem;
+  font-weight: 700;
   background-color: #323232;
-  border-bottom: 1px solid #f9f4da;
+  border-bottom: 0.1rem solid #f9f4da;
 }
 
 section.keyboard {
@@ -83,14 +86,15 @@ section.keyboard {
 section.keyboard > button {
   width: 2.3rem;
   height: 2.3rem;
+  font-weight: 500;
   background-color: #fcba29;
-  border: 1px solid #d7d7d7;
+  border: 0.1rem solid #d7d7d7;
   border-radius: 0.2rem;
 }
 
 .new-game {
   padding: 0.5rem 1.5rem;
   background-color: #11b5e5;
-  border: 1px solid #d7d7d7;
+  border: 0.1rem solid #d7d7d7;
   border-radius: 0.2rem;
 }
