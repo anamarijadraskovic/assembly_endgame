@@ -52,10 +52,26 @@ section.language-chips {
 }
 
 span.chip {
+  position: relative;
   padding: 0 0.7rem;
   font-weight: 700;
   line-height: 2.1rem;
   border-radius: 0.2rem;
+}
+
+/* Dimmed overlay with skull on "lost" languages */
+span.chip.lost::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 0.85rem;
+  content: "💀";
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 section.word {
