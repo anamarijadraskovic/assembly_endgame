@@ -31,7 +31,7 @@ main {
   max-width: 90vw;
 }
 
-section.game-status {
+output.game-status {
   width: 100%;
   padding: 0.6rem;
   color: #f9f4da;
@@ -39,25 +39,25 @@ section.game-status {
   border-radius: 0.2rem;
 }
 
-section.game-status.won {
+output.game-status.won {
   background-color: #10a95b;
 }
 
-section.game-status.lost {
+output.game-status.lost {
   background-color: #ba2a2a;
 }
 
-section.game-status.farewell {
+output.game-status.farewell {
   background-color: #7a5ea7;
   border: 1px dashed #323232;
 }
 
-section.game-status > p.farewell-message {
+output.game-status > p.farewell-message {
   font-style: italic;
   font-weight: 400;
 }
 
-section.game-status > h2 {
+output.game-status > h2 {
   font-size: 1.25rem;
 }
 
@@ -141,4 +141,16 @@ section.keyboard > button.wrong {
   background-color: #11b5e5;
   border: 0.1rem solid #d7d7d7;
   border-radius: 0.2rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
 }

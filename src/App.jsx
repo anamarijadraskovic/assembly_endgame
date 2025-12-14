@@ -13,6 +13,7 @@ export function AssemblyEndgame() {
   const wrongGuessCount = guessedLetters.filter(
     (letter) => !currentWord.includes(letter),
   ).length;
+  const numGuessesLeft = languages.length - 1 - wrongGuessCount;
   const isGameWon = currentWord
     .split("")
     .every((letter) => guessedLetters.includes(letter));
@@ -68,6 +69,9 @@ export function AssemblyEndgame() {
         key={letter}
         className={className}
         onClick={() => addGuessedLetter(letter)}
+        disabled={isGameOver}
+        aria-disabled={guessedLetters.includes(letter)}
+        aria-label={`Letter ${letter}`}
       >
         {letter.toUpperCase()}
       </button>
@@ -115,9 +119,28 @@ export function AssemblyEndgame() {
           from Assembly!
         </p>
       </header>
-      <section className={gameStatusClass}>{renderGameStatus()}</section>{" "}
+      <output aria-live="polite" className={gameStatusClass}>
+        {renderGameStatus()}
+      </output>{" "}
       <section className="language-chips">{languageElements}</section>
       <section className="word">{letterElements}</section>
+      <output className="sr-only" aria-live="polite">
+        <p>
+          {currentWord.includes(lastGuessedLetter)
+            ? `Correct! The letter ${lastGuessedLetter} is in the word.`
+            : `Sorry, the letter ${lastGuessedLetter} is not in the word.`}
+          You have {numGuessesLeft} attempts left.
+        </p>
+        <p>
+          Current word:{" "}
+          {currentWord
+            .split("")
+            .map((letter) =>
+              guessedLetters.includes(letter) ? `${letter}.` : "blank.",
+            )
+            .join(" ")}
+        </p>
+      </output>
       <section className="keyboard">{keyboardElements}</section>
       {isGameOver && (
         <button type="button" className="new-game">
