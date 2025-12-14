@@ -109,6 +109,10 @@ section.word > span {
   border-bottom: 0.1rem solid #f9f4da;
 }
 
+section.word > span.missed-letter {
+  color: #ec5d49;
+}
+
 section.keyboard {
   display: flex;
   flex-wrap: wrap;

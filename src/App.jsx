@@ -2,6 +2,7 @@ import { clsx } from "clsx";
 import { useState } from "react";
 import { languages } from "./languages";
 import "./App.css";
+import Confetti from "react-confetti";
 import { getFarewellText, getRandomWord } from "./utils.js";
 
 export function AssemblyEndgame() {
@@ -47,12 +48,18 @@ export function AssemblyEndgame() {
     );
   });
 
-  const letterElements = currentWord.split("").map((letter, index) => (
-    // biome-ignore lint/suspicious/noArrayIndexKey: Using index is safe because the characters are static and the list will never reorder or update independently.
-    <span key={index}>
-      {guessedLetters.includes(letter) ? letter.toUpperCase() : ""}
-    </span>
-  ));
+  const letterElements = currentWord.split("").map((letter, index) => {
+    const shouldRevealLetter = isGameLost || guessedLetters.includes(letter);
+    const letterClassName = clsx(
+      isGameLost && !guessedLetters.includes(letter) && "missed-letter",
+    );
+    return (
+      // biome-ignore lint/suspicious/noArrayIndexKey: Using index is safe because the characters are static and the list will never reorder or update independently.
+      <span key={index} className={letterClassName}>
+        {shouldRevealLetter ? letter.toUpperCase() : ""}
+      </span>
+    );
+  });
 
   const keyboardElements = alphabet.split("").map((letter) => {
     const isGuessed = guessedLetters.includes(letter);
@@ -110,8 +117,14 @@ export function AssemblyEndgame() {
     } else return null;
   }
 
+  function startNewGame() {
+    setCurrentWord(getRandomWord());
+    setGuessedLetters([]);
+  }
+
   return (
     <main>
+      {isGameWon && <Confetti />}
       <header>
         <h1>Assembly: Endgame</h1>
         <p>
@@ -143,7 +156,7 @@ export function AssemblyEndgame() {
       </output>
       <section className="keyboard">{keyboardElements}</section>
       {isGameOver && (
-        <button type="button" className="new-game">
+        <button type="button" className="new-game" onClick={startNewGame}>
           New Game
         </button>
       )}
