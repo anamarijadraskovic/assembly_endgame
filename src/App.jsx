@@ -2,11 +2,11 @@ import { clsx } from "clsx";
 import { useState } from "react";
 import { languages } from "./languages";
 import "./App.css";
-import { getFarewellText } from "./utils.js";
+import { getFarewellText, getRandomWord } from "./utils.js";
 
 export function AssemblyEndgame() {
   // state values
-  const [currentWord, setCurrentWord] = useState("react");
+  const [currentWord, setCurrentWord] = useState(() => getRandomWord());
   const [guessedLetters, setGuessedLetters] = useState([]);
 
   // derived values
