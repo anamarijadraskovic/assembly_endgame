@@ -124,7 +124,7 @@ export function AssemblyEndgame() {
 
   return (
     <main>
-      {isGameWon && <Confetti />}
+      {isGameWon && <Confetti recycle={false} numberOfPieces={1000} />}
       <header>
         <h1>Assembly: Endgame</h1>
         <p>
