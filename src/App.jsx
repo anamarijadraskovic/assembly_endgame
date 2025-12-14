@@ -27,7 +27,9 @@ export function AssemblyEndgame() {
 
   const letterElements = currentWord.split("").map((letter, index) => (
     // biome-ignore lint/suspicious/noArrayIndexKey: Using index is safe because the characters are static and the list will never reorder or update independently.
-    <span key={index}>{letter.toUpperCase()}</span>
+    <span key={index}>
+      {guessedLetters.includes(letter) ? letter.toUpperCase() : ""}
+    </span>
   ));
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
