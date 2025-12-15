@@ -1,12 +1,18 @@
 body {
+  background-color: #262626;
+}
+
+main {
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  max-width: 90vw;
   min-height: 100vh;
-  padding: 2rem 1.2rem;
-  color: #d9d9d9;
+  padding: 2rem;
   text-align: center;
-  background-color: #262626;
 }
 
 header > h1 {
@@ -21,14 +27,11 @@ header > p {
   color: #8e8e8e;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
-  width: 25.5rem;
-  max-width: 90vw;
+header > p,
+output.game-status,
+section.language-chips,
+section.keyboard {
+  max-width: 25.5rem;
 }
 
 output.game-status {
