@@ -33,10 +33,10 @@ main {
 
 output.game-status {
   width: 100%;
+  min-height: 3rem;
   padding: 0.6rem;
   color: #f9f4da;
   text-align: center;
-  border-radius: 0.2rem;
 }
 
 output.game-status.won {

@@ -87,7 +87,7 @@ h6 {
   font-family: "Hanken Grotesk";
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/hanken-grotesk-v12-latin-regular.woff2") format("woff2");
+  src: url("/hanken-grotesk-v12-latin-regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -95,7 +95,7 @@ h6 {
   font-family: "Hanken Grotesk";
   font-style: normal;
   font-weight: 500;
-  src: url("/fonts/hanken-grotesk-v12-latin-500.woff2") format("woff2");
+  src: url("/hanken-grotesk-v12-latin-500.woff2") format("woff2");
 }
 
 @font-face {
@@ -103,7 +103,7 @@ h6 {
   font-family: "Hanken Grotesk";
   font-style: normal;
   font-weight: 700;
-  src: url("/fonts/hanken-grotesk-v12-latin-700.woff2") format("woff2");
+  src: url("/hanken-grotesk-v12-latin-700.woff2") format("woff2");
 }
 
 body,
