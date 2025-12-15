@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { languages } from "./languages";
 import "./App.css";
 import Confetti from "react-confetti";
@@ -26,6 +26,14 @@ export function AssemblyEndgame() {
 
   // static values
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+  const newGameBtn = useRef(null);
+
+  useEffect(() => {
+    if (isGameOver && newGameBtn.current) {
+      newGameBtn.current.focus();
+    }
+  }, [isGameOver]);
 
   function addGuessedLetter(letter) {
     setGuessedLetters((prevLetters) =>
@@ -156,7 +164,12 @@ export function AssemblyEndgame() {
       </output>
       <section className="keyboard">{keyboardElements}</section>
       {isGameOver && (
-        <button type="button" className="new-game" onClick={startNewGame}>
+        <button
+          ref={newGameBtn}
+          type="button"
+          className="new-game"
+          onClick={startNewGame}
+        >
           New Game
         </button>
       )}
