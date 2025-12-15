@@ -32,12 +32,12 @@ header > p {
   color: #8e8e8e;
 }
 
-/*header > p,*/
-/*output.game-status,*/
-/*section.language-chips,*/
-/*section.keyboard {*/
-/*  width: 100%;*/
-/*}*/
+header > p,
+output.game-status,
+section.language-chips,
+section.keyboard {
+  width: 100%;
+}
 
 output.game-status {
   width: 100%;
@@ -104,6 +104,7 @@ section.word {
   flex-wrap: wrap;
   gap: 0.3rem;
   align-items: center;
+  color: #f9f4da;
 }
 
 section.word > span {
