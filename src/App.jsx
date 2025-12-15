@@ -35,6 +35,14 @@ export function AssemblyEndgame() {
     }
   }, [isGameOver]);
 
+  useEffect(() => {
+    if (!isLastGuessIncorrect) return;
+
+    if (navigator.vibrate) {
+      navigator.vibrate(200);
+    }
+  }, [isLastGuessIncorrect]);
+
   function addGuessedLetter(letter) {
     setGuessedLetters((prevLetters) =>
       prevLetters.includes(letter) ? prevLetters : [...prevLetters, letter],
