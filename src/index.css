@@ -119,3 +119,12 @@ button {
   background-color: inherit;
   border: none;
 }
+
+button:hover,
+button:focus {
+  opacity: 0.8;
+}
+
+button:active {
+  opacity: 1;
+}

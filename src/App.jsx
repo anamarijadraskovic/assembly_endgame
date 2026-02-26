@@ -67,6 +67,7 @@ export function AssemblyEndgame() {
   const letterElements = currentWord.split("").map((letter, index) => {
     const shouldRevealLetter = isGameLost || guessedLetters.includes(letter);
     const letterClassName = clsx(
+      "flex-center",
       isGameLost && !guessedLetters.includes(letter) && "missed-letter",
     );
     return (
@@ -101,7 +102,7 @@ export function AssemblyEndgame() {
     );
   });
 
-  const gameStatusClass = clsx("game-status", {
+  const gameStatusClass = clsx("flex-center", "game-status", {
     won: isGameWon,
     lost: isGameLost,
     farewell: !isGameOver && isLastGuessIncorrect,
@@ -139,7 +140,7 @@ export function AssemblyEndgame() {
   }
 
   return (
-    <main>
+    <main className={"flex-center"}>
       {isGameWon && <Confetti recycle={false} numberOfPieces={1000} />}
       <header>
         <h1>Assembly: Endgame</h1>
@@ -152,7 +153,7 @@ export function AssemblyEndgame() {
         {renderGameStatus()}
       </output>{" "}
       <section className="language-chips">{languageElements}</section>
-      <section className="word">{letterElements}</section>
+      <section className="flex-center word">{letterElements}</section>
       <output className="sr-only" aria-live="polite">
         <p>
           {currentWord.includes(lastGuessedLetter)
