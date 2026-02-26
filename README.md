@@ -4,7 +4,7 @@
 Instead of losing body parts, each wrong guess eliminates a programming language.  
 Lose them all — and Assembly takes over.
 
-🌐 **[Live site](https://assemblyanegame.netlify.app/)**
+🌐 **[Live site](https://assemlyendgame.netlify.app/)**
 
 ## Features
 
@@ -33,14 +33,12 @@ Lose them all — and Assembly takes over.
     - ✅ You reveal the entire word (you win), or
     - ❌ All programming languages are eliminated (Assembly wins).
 
-
 ## Accessibility
 
 - Keyboard-accessible controls
 - Visible focus states
 - Screen reader announcements for game status changes
 - Clear visual feedback for correct and incorrect guesses
-
 
 ## 🚀 Performance
 
